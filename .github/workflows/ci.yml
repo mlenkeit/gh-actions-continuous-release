@@ -15,5 +15,5 @@ jobs:
           prerelease: true
           name: latest2
           files: |
-            dist/*
+            dist/**/*
             README.md
