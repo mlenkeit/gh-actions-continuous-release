@@ -14,4 +14,4 @@ jobs:
           draft: true
           prerelease: true
           name: latest
-          files: Release.txt
+          files: README.md
