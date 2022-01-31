@@ -14,4 +14,6 @@ jobs:
           draft: true
           prerelease: true
           name: latest2
-          files: README.md
+          files: |
+            dist/*
+            README.md
