@@ -13,5 +13,5 @@ jobs:
         with:
           draft: true
           prerelease: true
-          name: latest
+          name: latest2
           files: README.md
