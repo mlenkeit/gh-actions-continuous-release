@@ -19,6 +19,7 @@ jobs:
 #             README.md
       - name: backup files
         run: |
+          git rev-parse HEAD > dist/commit.txt
           mv dist __dist__
       - name: Checkout
         uses: actions/checkout@v2
