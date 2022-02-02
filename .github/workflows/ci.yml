@@ -19,18 +19,18 @@ jobs:
 #             README.md
       - name: Commit files
         run: |
-          mkdir -p tmp
-          cd tmp
-          echo "Hello World" > tmp.txt
-          git init
+          mv dist __dist__
+          git checkout -f latest
+          git pull
+          rm -rf dist
+          mv __dist__ dist
+          
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add tmp.txt
-          git commit -m "Add changes"
+          git add dist
+          git commit -m "update dist"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: latest
-          directory: tmp
-          force: true
