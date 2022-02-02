@@ -16,7 +16,6 @@ jobs:
           name: latest
           files: |
             dist/**/*
-            README.md
 #       - name: backup files
 #         run: |
 #           git rev-parse HEAD > dist/commit.txt
