@@ -17,11 +17,16 @@ jobs:
 #           files: |
 #             dist/**/*
 #             README.md
-      - name: Commit files
+      - name: backup files
         run: |
           mv dist __dist__
-          git checkout -f latest
-          git pull
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          clean: false
+          ref: latest
+      - name: Commit files
+        run: |
           rm -rf dist
           mv __dist__ dist
           
