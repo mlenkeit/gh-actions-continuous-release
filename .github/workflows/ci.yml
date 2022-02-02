@@ -8,35 +8,35 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-#       - name: Release
-#         uses: softprops/action-gh-release@v1
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          prerelease: true
+          name: latest
+          files: |
+            dist/**/*
+            README.md
+#       - name: backup files
+#         run: |
+#           git rev-parse HEAD > dist/commit.txt
+#           mv dist __dist__
+#       - name: Checkout
+#         uses: actions/checkout@v2
 #         with:
-#           draft: true
-#           prerelease: true
-#           name: latest2
-#           files: |
-#             dist/**/*
-#             README.md
-      - name: backup files
-        run: |
-          git rev-parse HEAD > dist/commit.txt
-          mv dist __dist__
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          clean: false
-          ref: latest
-      - name: Commit files
-        run: |
-          rm -rf dist
-          mv __dist__ dist
+#           clean: false
+#           ref: latest
+#       - name: Commit files
+#         run: |
+#           rm -rf dist
+#           mv __dist__ dist
           
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add dist
-          git commit -m "update dist"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: latest
+#           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+#           git config --local user.name "github-actions[bot]"
+#           git add dist
+#           git commit -m "update dist"
+#       - name: Push changes
+#         uses: ad-m/github-push-action@master
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           branch: latest
