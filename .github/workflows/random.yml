@@ -11,6 +11,6 @@ jobs:
     steps:
       - name: log env
         run: |
-          echo $aNumber
-        env:
-          aNumber: ${{ Math.random() }}
+          echo $(( $RANDOM % 100 + 1 ))
+#         env:
+#           aNumber: ${{ Math.random() }}
