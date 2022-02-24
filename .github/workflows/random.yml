@@ -1,0 +1,16 @@
+
+
+name: Random
+
+on:
+  workflow_dispatch: # manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: log env
+        run: |
+          echo $aNumber
+        env:
+          aNumber: ${{ Math.random() }}
