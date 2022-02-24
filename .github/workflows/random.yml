@@ -16,11 +16,11 @@ jobs:
         run: |
           echo $SOME_NUMBER
       - name: say a
-        if: ${{ env.SOME_NUMBER > 50) }}
+        if: ${{ env.SOME_NUMBER > 50 }}
         run: |
           echo "A"
       - name: say b
-        if: ${{ env.SOME_NUMBER <= 50) }}
+        if: ${{ env.SOME_NUMBER <= 50 }}
         run: |
           echo "B"
 #         env:
