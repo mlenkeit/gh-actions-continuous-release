@@ -9,8 +9,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: random number
+        run: |
+          echo "SOME_NUMBER=$(( $RANDOM % 100 + 1 ))" >> $GITHUB_ENV
       - name: log env
         run: |
-          echo $(( $RANDOM % 100 + 1 ))
+          echo $SOME_NUMBER
 #         env:
 #           aNumber: ${{ Math.random() }}
